@@ -1,9 +1,12 @@
 import React from 'react';
+import Banner from '../../components/home/Banner';
+import SummaryCard from '../../components/home/SummaryCard';
 
 const Homepage = () => {
     return (
         <div>
-            this is homepage
+            <Banner></Banner>
+            <SummaryCard></SummaryCard>
         </div>
     );
 };
