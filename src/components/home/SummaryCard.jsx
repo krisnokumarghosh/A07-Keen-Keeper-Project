@@ -2,7 +2,8 @@ import React from 'react';
 
 const SummaryCard = () => {
     return (
-        <div className='mt-10 md:mt-15 lg:mt-20 container mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-5 lg:gap-0 justify-items-center '>
+        
+         <div className='mt-10 md:mt-15 lg:mt-20 container mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-5 lg:gap-0 justify-items-center '>
             
             <div className='w-65  bg-[#FFFFFF] shadow rounded-lg text-center py-8 border border-base-100 '>
                 <h3 className='text-[32px] font-semibold text-[#244D3F]'>10</h3>
@@ -22,6 +23,7 @@ const SummaryCard = () => {
             </div>
 
         </div>
+
     );
 };
 
