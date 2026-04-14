@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FriendsCard = ({friend}) => {
 
     const {
+        id,
         picture,
         name,
         days_since_contact,
@@ -12,7 +14,9 @@ const FriendsCard = ({friend}) => {
     } = friend
 
     return (
-        <div className='w-65 bg-[#FFFFFF] border border-base-200 mt-4 shadow rounded-lg py-6'>
+        <Link  
+        to={`/friendDetails/${id}`}
+        className='w-65 bg-[#FFFFFF] border border-base-200 mt-4 shadow rounded-lg py-6'>
             <img className='mx-auto' src={picture} alt="friends photo" />
             <h4 className='text-[20px] text-center mt-3 font-semibold text-[#1F2937]'>{name}</h4>
             <p className='text-[12px] text-center mt-2 text-[#64748B]'>{days_since_contact}d ago</p>
@@ -39,7 +43,7 @@ const FriendsCard = ({friend}) => {
                     `}>{status}</span>
             </div>
 
-        </div>
+        </Link>
     );
 };
 
