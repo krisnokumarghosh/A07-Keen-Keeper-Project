@@ -1,6 +1,7 @@
 import React from 'react';
 import useFriends from '../../hooks/useFriends';
 import FriendsCard from '../ui/FriendsCard';
+import { RotateLoader } from 'react-spinners';
 
 const Friends = () => {
 
@@ -12,7 +13,9 @@ const Friends = () => {
 
             {
                 loading ? 
-                <div>loading..</div> :
+                <div className="flex justify-center items-center">
+                    <RotateLoader color="#244D3F"></RotateLoader>
+                </div> :
 
                 <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 justify-items-center'>
                     {
