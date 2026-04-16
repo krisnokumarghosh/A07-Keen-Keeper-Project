@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriends from "../../hooks/useFriends";
 import snoozeImg from "../../assets/BellSimpleZ.png";
@@ -8,6 +8,7 @@ import callImg from "../../assets/PhoneCall.png";
 import chatImg from "../../assets/ChatDots.png";
 import videoImg from "../../assets/VideoCamera.png";
 import { RotateLoader } from "react-spinners";
+import { FriendsContext } from "../../context/FriendsContext";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -15,9 +16,23 @@ const FriendDetails = () => {
 
   const expectedFriend = friends.find((friend) => friend.id === Number(id));
 
+  const {timelineFriends , setTimelineFriends , operation , setOperation} = useContext(FriendsContext);
 
+  const handleCallBtn = () => {
+    setTimelineFriends([...timelineFriends , expectedFriend]);
+    setOperation([...operation , "Call"]);
+  }
 
-  console.log(expectedFriend);
+  const handleTextBtn = () => {
+     setTimelineFriends([...timelineFriends , expectedFriend]);
+     setOperation([...operation , "Text"]);
+  }
+
+  const handleVideoBtn = () => {
+     setTimelineFriends([...timelineFriends , expectedFriend]);
+     setOperation([...operation , "Video"]);
+  }
+  
 
   return (
     <div className="mt-20">
@@ -116,18 +131,28 @@ const FriendDetails = () => {
                 <h4 className="font-semibold text-[20px] text-[#244D3F]">Quick Check-In</h4>
 
                 <div className=" md:flex justify-between mt-3 space-y-4 md:space-y-0">
-                  <button className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
+                 
+                  <button 
+                  onClick={handleCallBtn}
+                  className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
                     <img src={callImg} className="mx-auto " alt="" />
                     <p className="text-center text-[#1F2937] text-[16px]">Call</p>
                   </button>
-                  <button className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
+                  
+                  <button 
+                  onClick={handleTextBtn}
+                  className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
                     <img src={chatImg} className="mx-auto " alt="" />
                     <p className="text-center text-[#1F2937] text-[16px]">Text</p>
                   </button>
-                  <button className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
+                  
+                  <button 
+                  onClick={handleVideoBtn}
+                  className="btn mx-auto md:mx-0 w-54.75 h-23.75 flex flex-col rounded-md">
                     <img src={videoImg} className="mx-auto " alt="" />
-                    <p className="text-center text-[#1F2937] text-[16px]">Call</p>
-                  </button>
+                    <p className="text-center text-[#1F2937] text-[16px]">Video</p>
+                 </button>
+
                 </div>
 
               </div>
