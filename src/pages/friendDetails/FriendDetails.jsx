@@ -9,6 +9,7 @@ import chatImg from "../../assets/ChatDots.png";
 import videoImg from "../../assets/VideoCamera.png";
 import { RotateLoader } from "react-spinners";
 import { FriendsContext } from "../../context/FriendsContext";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const FriendDetails = () => {
   const {timelineFriends , setTimelineFriends} = useContext(FriendsContext);
 
   const handleCallBtn = () => {
-
+    toast.success(`Call With ${expectedFriend.name}`)
     const newData = {
       friend : expectedFriend,
       action : "Call",
@@ -30,7 +31,7 @@ const FriendDetails = () => {
   }
 
   const handleTextBtn = () => {
-
+    toast.success(`Text With ${expectedFriend.name}`)
     const newData = {
       friend : expectedFriend,
       action : "Text",
@@ -41,7 +42,7 @@ const FriendDetails = () => {
   }
 
   const handleVideoBtn = () => {
-
+    toast.success(`Video With ${expectedFriend.name}`)
     const newData = {
       friend : expectedFriend,
       action : "Video",
