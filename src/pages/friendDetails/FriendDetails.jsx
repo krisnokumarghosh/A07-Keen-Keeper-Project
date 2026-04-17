@@ -16,21 +16,39 @@ const FriendDetails = () => {
 
   const expectedFriend = friends.find((friend) => friend.id === Number(id));
 
-  const {timelineFriends , setTimelineFriends , operation , setOperation} = useContext(FriendsContext);
+  const {timelineFriends , setTimelineFriends} = useContext(FriendsContext);
 
   const handleCallBtn = () => {
-    setTimelineFriends([...timelineFriends , expectedFriend]);
-    setOperation([...operation , "Call"]);
+
+    const newData = {
+      friend : expectedFriend,
+      action : "Call",
+      date : new Date().toLocaleDateString()
+    }
+
+    setTimelineFriends([...timelineFriends , newData]);
   }
 
   const handleTextBtn = () => {
-     setTimelineFriends([...timelineFriends , expectedFriend]);
-     setOperation([...operation , "Text"]);
+
+    const newData = {
+      friend : expectedFriend,
+      action : "Text",
+      date : new Date().toLocaleDateString()
+    }
+
+     setTimelineFriends([...timelineFriends , newData]);
   }
 
   const handleVideoBtn = () => {
-     setTimelineFriends([...timelineFriends , expectedFriend]);
-     setOperation([...operation , "Video"]);
+
+    const newData = {
+      friend : expectedFriend,
+      action : "Video",
+      date : new Date().toLocaleDateString()
+    }
+
+     setTimelineFriends([...timelineFriends , newData]);
   }
   
 

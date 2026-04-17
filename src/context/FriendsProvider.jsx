@@ -4,13 +4,10 @@ import { FriendsContext } from './FriendsContext';
 const FriendsProvider = ({children}) => {
 
     const [timelineFriends , setTimelineFriends] = useState([]);
-    const [operation , setOperation] = useState([]);
 
     const  data = {
         timelineFriends,
         setTimelineFriends,
-        operation,
-        setOperation
     }
 
     return (
