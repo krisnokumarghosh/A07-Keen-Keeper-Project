@@ -1,6 +1,6 @@
 # KennKeeper — Keep Your Friendships Alive 
 
-    <p>By this project you can keep your friendsship alive. By this website you can find your friends and can see his/her details, status, contact info, contact status and many more. Also you can start a call, text and video call with your friend and can see the interactions with your friends on Timeline page and can see statictics on stat page.</p>
+<p>By this project you can keep your friendsship alive. By this website you can find your friends and can see his/her details, status, contact info, contact status and many more. Also you can start a call, text and video call with your friend and can see the interactions with your friends on Timeline page and can see statictics on stat page.</p>
 
 
 ## Technologies Used: 
