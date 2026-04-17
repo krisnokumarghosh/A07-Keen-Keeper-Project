@@ -6,7 +6,7 @@ import xImg from "../../assets/twitter.png";
 
 const Footer = () => {
     return (
-        <div className='bg-[#244D3F] mt-20 min-h-103.25 pt-20 pb-7.5'>
+        <div className='bg-[#244D3F] mt-20 min-h-103.25 pt-20 pb-7.5 '>
             <div className='container mx-auto'>
                 <img src={footerLogo} className='mx-auto h-8 md:h-12.5' alt="" />
                 <p className='text-white/60 text-center mt-4 text-[13px] md:text-[16px] w-75 mx-auto md:w-full md:mx-0'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>

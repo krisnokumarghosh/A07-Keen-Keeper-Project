@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useState} from "react";
 import { FriendsContext } from "../../context/FriendsContext";
 import callImg from "../../assets/call.png";
 import videoImg from "../../assets/video.png";
@@ -8,16 +8,17 @@ import ArrowImg from "../../assets/CaretDown.png";
 
 const Timeline = () => {
   const { timelineFriends } = useContext(FriendsContext);
+  const [shortingType , setShortingType] = useState("")
+  
+  const timelineData = shortingType ? timelineFriends.filter(item => item.action === shortingType): timelineFriends
 
-  
-  
   return (
     <div className="container mx-auto mt-10 md:mt-20">
       <h1 className=" text-[37px] text-center md:text-left md:text-[48px] font-bold text-[#1F2937]">
         Timeline
       </h1>
 
-      {timelineFriends.length === 0 ? (
+      {timelineData.length === 0 ? (
         <div className="w-full bg-white shadow rounded-xl p-4 mt-6">
           <img
             src={nodataImg}
@@ -38,24 +39,24 @@ const Timeline = () => {
               className="dropdown-content menu font-semibold text-[#244D3F] bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li 
-             
+             onClick={() => setShortingType("Call")}
               className="hover:bg-[#244D3F] hover:text-white rounded-md">
                 <a>Call</a>
               </li>
               <li 
-               
+               onClick={() => setShortingType("Text")}
               className="hover:bg-[#244D3F] hover:text-white rounded-md">
                 <a>Text</a>
               </li>
               <li 
-              
+              onClick={() => setShortingType("Video")}
               className="hover:bg-[#244D3F] hover:text-white rounded-md">
                 <a>Video</a>
               </li>
             </ul>
           </div>
 
-          {timelineFriends.map((elem, ind) => {
+          {timelineData.map((elem, ind) => {
             return (
               <div
                 key={ind}
